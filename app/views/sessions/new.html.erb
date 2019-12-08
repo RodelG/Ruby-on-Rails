@@ -1,0 +1,36 @@
+<h1> Welcome </h1>
+<div class="block" id="block-login">
+  <h2>Sign in</h2>
+  <div class="content login">
+    <div class="flash">
+      <% flash.each do |type, message| %>
+        <div class="message notice">
+          <p>
+            <%= message %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <%= form_tag do %>
+    <fieldset>
+      <legend>Please Log In</legend>
+      <div class="group wat-cf">
+        <div class="left">
+          <%= label_tag :name, 'Email Address:' %>
+        </div>
+        <div class="right">
+        <%= text_field_tag :name, params[:name] %>
+        </div>
+      </div>
+      <div class="group wat-cf">
+        <div class="left"><%= label_tag :password, 'Password:' %></div>
+        <div class="right"><%= password_field_tag :password, params[:password] %></div>
+      </div>
+      <div class="group wat-cf">
+        <div class="right"><div class="button"><%= submit_tag "Login" %></div></div>
+      </div>
+    </fieldset>
+  <% end %>
+  </div>
+  <%= link_to 'No account? Signup for new user', new_user_path %>
+</div>

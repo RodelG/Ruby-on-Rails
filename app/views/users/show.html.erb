@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email Address:</strong>
+  <%= @user.name %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'User List', users_path %>
+<%= link_to 'Logout', sessions_destroy_path %>
+
+
+<%= render 'comments/comments'  %>
+<%= render 'comments/form'  %>

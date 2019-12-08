@@ -1,0 +1,18 @@
+<h3>Add Comments Section</h3>
+
+<%= form_for([@user, @user.comments.build]) do |f| %>
+
+  <h4>
+    <%= f.label :Title %><br>
+    <%= f.text_field(:title, {:class => 'form-control'})%>
+  </h4>
+
+  <h4>
+    <%= f.label :Description %><br>
+    <%= f.text_field(:description, {:class => 'form-control'}) %>
+  </h4>
+
+  <p>
+    <%= f.submit({:class => 'btn btn-primary'}) %>
+ </p>
+<% end %>

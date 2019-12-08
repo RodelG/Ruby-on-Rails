@@ -1,0 +1,11 @@
+<h3>All about the User's Comments</h3>
+<% @user.comments.each do |comment| %>
+  <div class="well">
+    <p><strong><%= comment.title %></strong>: <%= comment.description%>
+      <%= link_to "[X]", [comment.user, comment],
+                            method: :delete,
+                            data: {confirm: 'Are you sure?'},
+                            :class => 'btn btn-default' %>
+    </p>
+    </div>
+  <% end %>

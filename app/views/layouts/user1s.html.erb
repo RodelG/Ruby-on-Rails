@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Rails</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+        <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
